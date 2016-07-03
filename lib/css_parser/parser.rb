@@ -206,6 +206,10 @@ module CssParser
           styles_by_media_types[media_type] ||= []
           styles_by_media_types[media_type] << [selectors, declarations]
         end
+        if media_types.empty?
+          styles_by_media_types[:all] ||= []
+          styles_by_media_types[:all] << [selectors, declarations]
+        end
       end
 
       styles_by_media_types.each_pair do |media_type, media_styles|
