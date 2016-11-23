@@ -270,7 +270,7 @@ module CssParser
       current_media_query = ''
       current_declarations = ''
 
-      block.scan(/(([\\]{2,})|([\\]?[{}\s"])|(.[^\s"{}\\]*))/).each do |matches|
+      block.scan(/(([\\]{2,})|([\\]?[{}\s"][;]?)|(.[^\s"{}\\]*))/).each do |matches|
         token = matches[0]
 
         if token =~ /\A"/ # found un-escaped double quote
